@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+   
+    <form action="/views/cartelera.ejs/buscar" method="post">
+        <input type="text" name="buscar" placeholder="Teclea la pelicula a buscar" style="background-color: #CDC2AE;">
+        <input type="submit" placeholder="buscar" style="background-color: #FFCC8F;" value="buscar">
+    </form>
+
+    <h1 style="text-align: center;">Cartelera De Peliculas</h1>
+    <h1 style="text-align: right;"><a href="/menu.html">Administrador</a></h1>
+
+    <!for para traer la informacion completa de mongodbcompass>
+   <%moviesList.forEach(movie => {%>
+        <form action="/views/info_completa.ejs/ver" method="post"> 
+        <center> <table border="1" style="text-align: center;">
+                <tr>
+                    <th scope="col" style="text-align:center;"> ID </th>
+                    <th scope="col" style="text-align:center;"> Pelicula </th><br>
+                    <th scope="col" style="text-align:center;"> Accion </th>
+                </tr>
+                <tr>
+                    <td> <input type="text" name="id" style="background-color: #CDC2AE;" value=<%= movie._id %> readonly></td><br>
+                    <td><%= movie.nombre %></a></td><br>
+                    <td><button class="btn btn-success" onClick="req._id" style="background-color: #FFCC8F;">Ver Pelicula</button></td>
+                </tr>
+            </table></center>
+        </form>
+    <%})%>
+      
+</body>
+</html>

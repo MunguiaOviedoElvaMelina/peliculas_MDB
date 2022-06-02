@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body style="background-color: #A760FF;"> 
+  <script>
+      function mialerta() {  
+            alert("Pelicula Eliminada Correctamente");
+        } 
+  </script>
+    <h1 style="text-align: center;">Borrar Peliculas</h1>
+
+    <!for para traer la informacion completa de mongodbcompass>
+    <%moviesList.forEach(movie => {%>
+        <form action="/views/borrar.ejs/borrar" method="post">
+        <center> <table border="2" style="text-align: center;">
+            <tr>
+                <th scope="col" style="text-align:center;"> ID </th>
+                <th scope="col" style="text-align:center;"> Pelicula </th><br>
+                <th scope="col" style="text-align:center;"> Accion </th>
+            </tr>
+             <tr>
+                 <!info_completa.js aun no se crea>
+                 <td> <input type="text" name="id"  value=<%= movie._id %> readonly></td><br>
+                 <td><%= movie.nombre%></td><br>
+                <td><button class="btn btn-danger" onclick="mialerta();" onClick="req._id" >Eliminar Pelicula</button></td>
+             </tr>
+         </table></center>
+        </form>
+     <%})%>
+       
+    <button style="float: right;"><a href='/menu.html'> REGRESAR </a></button>
+</body>
+</html>

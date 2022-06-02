@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    
+    <div style="text-align: center;">
+        <%moviesList.forEach(movie => {%>
+                <center> <table border="1" style="text-align: center;">
+                    <tr>
+                        <th scope="col" style="text-align:center;"> NOMBRE:</th>
+                        <th scope="col" style="text-align:center;"> PROTAGONISTAS:</th>
+                        <th scope="col" style="text-align:center;"> AÑO: </th>
+                        <th scope="col" style="text-align:center;"> SINOPSIS: </th>
+                    </tr>
+                        <tr>
+                            <td> <%= movie.nombre %> </td>
+                            <td> <%= movie.protagonista %> </td>
+                            <td> <%= movie.ano %> </td>
+                            <td> <%= movie.sinopsis %> </td>
+                        </tr>
+                    </table></center>
+          
+        <%})%>
+    </div>
+
+    <div style="text-align: center;">
+        <button ><a href='./views/cartelera.ejs'> REGRESAR </a></button>
+    </div>
+      
+</body>
+</html>
